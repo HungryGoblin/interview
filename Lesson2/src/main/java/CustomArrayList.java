@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class CustomArrayList<T> {
 
     private static final int DEFAULT_CAPACITY = 2;
@@ -18,9 +16,8 @@ public class CustomArrayList<T> {
         return capacity;
     }
 
-    private void ensureCapacity () {
-        if (capacity <= size + 1)
-        {
+    private void ensureCapacity() {
+        if (capacity <= size + 1) {
             T[] temp = (T[]) new Object[capacity + DEFAULT_CAPACITY];
             System.arraycopy(elements, 0, temp, 0, capacity);
             capacity = temp.length;
@@ -28,19 +25,19 @@ public class CustomArrayList<T> {
         }
     }
 
-    private void checkIndex (int index) {
+    private void checkIndex(int index) {
         if (index < 0 || index >= size)
             throw new ArrayIndexOutOfBoundsException(String.format(
                     "Incorrect index: %d, expected: 0..%d", index, size - 1));
     }
 
-    public void add (T element) {
+    public void add(T element) {
         ensureCapacity();
         elements[size] = element;
         size++;
     }
 
-    public void remove (int index) {
+    public void remove(int index) {
         checkIndex(index);
         if (index < size - 1)
             System.arraycopy(elements, index + 1, elements, index, size - index);

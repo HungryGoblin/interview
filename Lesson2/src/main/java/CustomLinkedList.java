@@ -1,4 +1,4 @@
-public class CustomLinkedList<T> {
+git public class CustomLinkedList<T> {
 
     private int size = 0;
 
@@ -57,7 +57,7 @@ public class CustomLinkedList<T> {
                 head = head.next;
         } else {
             Node node = getNode(index - 1);
-            node.next = index >= size - 1? null: getNode(index + 1);
+            node.next = index >= size - 1 ? null : getNode(index + 1);
         }
         size--;
     }
