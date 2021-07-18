@@ -1,4 +1,4 @@
-git public class CustomLinkedList<T> {
+public class CustomLinkedList<T> {
 
     private int size = 0;
 
